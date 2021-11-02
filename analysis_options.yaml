@@ -1,0 +1,38 @@
+include: package:flutter_lints/flutter.yaml
+
+
+linter:
+  rules:
+    public_member_api_docs: false
+analyzer:
+  plugins:
+    - dart_code_metrics
+  errors:
+    missing_required_param: error
+    missing_return: warning
+
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  strong-mode:
+    implicit-casts: true
+    implicit-dynamic: true
+
+dart_code_metrics:
+  anti-patterns:
+    - long-method
+    - long-parameter-list
+  metrics:
+    cyclomatic-complexity: 25
+    maximum-nesting-level: 5
+    number-of-parameters: 4
+    source-lines-of-code: 75
+  metrics-exclude:
+    - test/**
+  rules:
+    - newline-before-return
+    - no-boolean-literal-compare
+    - no-empty-block
+    - prefer-conditional-expressions
+    - no-equal-then-else
+    - missing_return: false
